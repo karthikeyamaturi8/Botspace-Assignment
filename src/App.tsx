@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import DashBoardLayout from "./layout/dashboard";
 import Star from "./pages/star";
 import NotFound from "./pages/notFound";
@@ -16,7 +21,7 @@ const App = () => {
         <Route path="*" element={<Navigate to="/notFound" />} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

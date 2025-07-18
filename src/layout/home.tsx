@@ -1,14 +1,12 @@
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { Flex } from "@chakra-ui/react";
 
-const HomeLayout = () => {
+export const HomeLayout = () => {
   return (
-    <Flex direction={"column"} height={"100vh"} >
-      <Flex flexGrow={1} >
+    <Box display="flex" flexDirection="column" height="100vh">
+      <Box display="flex" flexGrow={1}>
         <Outlet />
-      </Flex>
-    </Flex>
-  )
+      </Box>
+    </Box>
+  );
 };
-
-export default HomeLayout;

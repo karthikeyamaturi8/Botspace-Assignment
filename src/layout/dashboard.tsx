@@ -1,20 +1,31 @@
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./sidebar";
+
 const DashBoardLayout = () => {
     return (
-        <Flex direction={"column"} height={"100vh"}>
-            <Flex flexGrow={1} overflow={"hidden"} bg={"white"} >
-                <Flex display={{ base: "none", md: "flex" }}>
+        <Box display="flex" flexDirection="column" height="100vh">
+            <Box display="flex" flexGrow={1} overflow="hidden" bgcolor="white">
+                <Box display={{ xs: "none", md: "flex" }}>
                     <Sidebar />
-                </Flex>
-                <Flex containerType={"inline-size"} direction={"column"} flexGrow={1} borderRadius={10} >
-                    <Flex containerType={"inline-size"} m={2} direction={"column"} flexGrow={1} overflowY={"auto"}>
+                </Box>
+                <Box
+                    display="flex"
+                    flexDirection="column"
+                    flexGrow={1}
+                    borderRadius={2}
+                >
+                    <Box
+                        display="flex"
+                        flexDirection="column"
+                        flexGrow={1}
+                        sx={{ overflowY: "auto" }}
+                    >
                         <Outlet />
-                    </Flex>
-                </Flex>
-            </Flex>
-        </Flex>
+                    </Box>
+                </Box>
+            </Box>
+        </Box>
     );
 };
 

@@ -1,12 +1,12 @@
 import Notfound from "../assets/notFound.jpg"
-import { Image, Flex } from "@chakra-ui/react"
+import { Box } from "@mui/material";
+
 const NotFound = () => {
-
     return (
-        <Flex w={"100%"} h={"100%"} justifyContent={"center"} alignItems={"center"} >
-            <Image src={Notfound} width={"50%"} height={"50%"} />
-        </Flex>
-    )
-}
+        <Box width="100%" height="100%" display="flex" justifyContent="center" alignItems="center">
+            <Box component="img" src={Notfound} width="35%" height="50%" alt="Not Found" />
+        </Box>
+    );
+};
 
-export default NotFound
+export default NotFound;
