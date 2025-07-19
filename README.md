@@ -1,69 +1,103 @@
-# React + TypeScript + Vite
+#  BotSpace Assignment - Instagram UI Clone features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Assignment Overview
 
-Currently, two official plugins are available:
+This project is a minimal Instagram-like UI built as part of the BotSpace Full Stack Developer assignment. The application replicates the core visual components and layout of Instagram using Material-UI (MUI) components and is built with Vite for optimal development experience and performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Assignment Requirements
 
-## Expanding the ESLint configuration
+- ✅ Build minimal Instagram UI as shown in the provided video
+- ✅ Use Material-UI (MUI) for all components and styling
+- ✅ Match the exact UI/UX shown in the reference video
+- ✅ Deploy and host on Vercel with a live link
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Live Demo
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Hosted Link:** [Your Vercel URL Here]
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Frontend Framework:** React.js
+- **Build Tool:** Vite
+- **UI Library:** Material-UI (MUI)
+- **Styling:** MUI Theme + Custom CSS
+- **Deployment:** Vercel
+- **Package Manager:** npm
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Installation & Setup
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone [your-repo-url]
+   cd instagram-ui-clone
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- Desktop (1200px+)
+
+## 📋 Assignment Checklist
+
+- [ ] UI matches the provided video exactly
+- [ ] All components built with MUI
+- [ ] Code is clean and well-documented
+- [ ] Successfully deployed on Vercel
+- [ ] Live link is accessible and working
+
+## 🤝 Development Process
+
+1. **Analysis:** Studied the reference video to understand requirements
+2. **Design:** Planned component structure and MUI implementation
+3. **Development:** Built components following Material Design principles
+4. **Testing:** Ensured responsiveness and cross-browser compatibility
+5. **Deployment:** Deployed to Vercel with proper configuration
+
+## 📝 Notes
+
+- All icons and assets used are either from MUI Icons or designed in figma.
+- The application focuses on UI/UX replication rather than backend functionality
+- Responsive breakpoints follow MUI's standard breakpoint system
+
+## 🔗 References
+
+- [Material-UI Documentation](https://mui.com/)
+- [React Documentation](https://reactjs.org/)
+- [Vercel Deployment Guide](https://vercel.com/docs)
+
+## 👨‍💻 Developer
+
+**Name:** Karthikeya Maturi 
+**Assignment:** BotSpace Full Stack Developer Role  
+**Submission Date:** Not-Provided  
+**Contact:** karthikeyamaturi8@gmail.com
+
+---
+
+*This project was created as part of the BotSpace technical assignment for the Full Stack Developer position.*
