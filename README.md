@@ -13,8 +13,7 @@ This project is a minimal Instagram-like UI built as part of the BotSpace Full S
 
 ## 🚀 Live Demo
 
-**Hosted Link:** [Your Vercel URL Here]
-
+**Hosted Link:** https://botspace-assignment-flame.vercel.app/
 ## 🛠 Tech Stack
 
 - **Frontend Framework:** React.js
