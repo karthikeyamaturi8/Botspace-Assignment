@@ -1,8 +1,11 @@
 import { Box, Typography, IconButton } from "@mui/material";
 import botSpace from "../../assets/botSpace.png";
 import options from "../../assets/insta-svgs/options";
+import { useStarStore } from "../../stores/star";
 
 const PostSection = () => {
+  const { selectedPost } = useStarStore();
+
   return (
     <>
       <Box p={1} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
@@ -25,7 +28,7 @@ const PostSection = () => {
           {options()}
         </IconButton>
       </Box>
-      <Box component="img" src={"/img-3.png"} sx={{ objectFit: "cover" }} height="274px" width={"100%"} alt="box-star" />
+      <Box component="img" src={selectedPost.imageUrl} sx={{ objectFit: "cover" }} height="274px" width={"100%"} alt="box-star" />
     </>
   );
 };

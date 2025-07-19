@@ -14,7 +14,7 @@ const CustomTabs = styled((props: any) => (
     }}
   />
 ))(() => ({
-  backgroundColor: "#f0f0f5",
+  backgroundColor: "#e1e1e5ff",
   borderRadius: 50,
   padding: 5,
   position: "relative",
@@ -82,9 +82,9 @@ const AnimatedTabs: React.FC = () => {
   return (
     <Box sx={{ width: "auto" }}>
       <CustomTabs value={view} onChange={handleChange}>
-        <CustomTab label="Post" value={"POST"} />
-        <CustomTab label="Comments" value={"COMMENTS"} />
-        <CustomTab label="DM" value={"DM"} />
+        <CustomTab label="Post" value={"POST"} sx={{ fontWeight: 400 }} />
+        <CustomTab label="Comments" value={"COMMENTS"} sx={{ fontWeight: 400 }} />
+        <CustomTab label="DM" value={"DM"} sx={{ fontWeight: 400 }} />
       </CustomTabs>
     </Box>
   );

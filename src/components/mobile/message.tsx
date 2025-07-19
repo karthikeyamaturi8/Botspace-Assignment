@@ -11,10 +11,12 @@ import { CameraFilled } from "../../assets/insta-svgs/camera";
 import Image from "../../assets/insta-svgs/image";
 import Sticker from "../../assets/insta-svgs/sticker";
 import Plus from "../../assets/insta-svgs/plus";
+import { useStarStore } from "../../stores/star";
 
-const message = () => {
+const Message = () => {
+  const { view} = useStarStore();
   return (
-    <Box zIndex={1} bottom={0} display={"flex"} flexDirection={"column"} position={"absolute"} height={"100%"} width={"100%"} bgcolor={"#000"} sx={{ borderRadius: "27px" }}>
+    <Box zIndex={1} bottom={0} display={view === "DM" ? "flex" : "none"} flexDirection={"column"} position={"absolute"} height={"100%"} width={"100%"} bgcolor={"#000"} sx={{ borderRadius: "27px" }}>
       <Box py={1} pt={2} px={2} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
         <Box px={2}>
           <Typography color="white" fontSize="0.6rem" fontWeight={400}>
@@ -32,7 +34,7 @@ const message = () => {
               padding: 0,
             }}
           >
-            {Signal()}
+            {<Signal />}
           </IconButton>
           <IconButton
             sx={{
@@ -44,7 +46,7 @@ const message = () => {
               padding: 0,
             }}
           >
-            {Wifi()}
+            {<Wifi />}
           </IconButton>
           <IconButton
             sx={{
@@ -56,7 +58,7 @@ const message = () => {
               padding: 0,
             }}
           >
-            {Battery()}
+            {<Battery />}
           </IconButton>
         </Box>
       </Box>
@@ -72,7 +74,7 @@ const message = () => {
               padding: 0,
             }}
           >
-            {ChevronLeft()}
+            {<ChevronLeft />}
           </IconButton>
           <Box gap={1} display={"flex"} alignItems={"center"}>
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"} p={"5px"} width={"25px"} height={"25px"} borderRadius={14} sx={{ background: "white" }}>
@@ -92,7 +94,7 @@ const message = () => {
               padding: 0,
             }}
           >
-            {CallIcon()}
+            {<CallIcon />}
           </IconButton>
           <IconButton
             sx={{
@@ -102,13 +104,13 @@ const message = () => {
               padding: 0,
             }}
           >
-            {VideoCallIcon()}
+            {<VideoCallIcon />}
           </IconButton>
         </Box>
       </Box>
       <Divider sx={{ background: "#1C1D27" }} />
       <Box width={"100%"} flexGrow={1}>
-        {Chat()}
+        {<Chat />}
       </Box>
       <Box p={1} width={"100%"} height={"60px"}>
         <Box gap={1} display={"flex"} alignItems={"center"} py={1} px={"0.2rem"} pr={1} height={"75%"} borderRadius={5} width={"100%"} sx={{ background: "#1C1D27" }}>
@@ -122,7 +124,7 @@ const message = () => {
                 margin: 0,
               }}
             >
-              {CameraFilled()}
+              {<CameraFilled />}
             </IconButton>
           </Box>
           <Box flexGrow={1}>
@@ -141,7 +143,7 @@ const message = () => {
               margin: 0,
             }}
           >
-            {Image()}
+            {<Image />}
           </IconButton>
           <IconButton
             sx={{
@@ -154,7 +156,7 @@ const message = () => {
               margin: 0,
             }}
           >
-            {Sticker()}
+            {<Sticker />}
           </IconButton>
           <IconButton
             sx={{
@@ -167,7 +169,7 @@ const message = () => {
               margin: 0,
             }}
           >
-            {Plus()}
+            {<Plus />}
           </IconButton>
         </Box>
       </Box>
@@ -175,4 +177,4 @@ const message = () => {
   );
 };
 
-export default message;
+export default Message;

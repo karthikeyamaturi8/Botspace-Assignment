@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton, Link } from "@mui/material";
+import { Box, Button, Divider, IconButton, Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import UserIcon from "../assets/user";
 import HomeIcon from "../assets/home";
@@ -8,19 +8,19 @@ import SettingsIcon from "../assets/settings";
 import StarDot from "../assets/starDot";
 import Logo from "../assets/logo.png";
 import StarBox from "../assets/botSpace.png";
-
+import QuestionIcon from "../assets/question";
 type IconFunction = () => any;
 
 const Sidebar: React.FC = () => {
   const renderNavItem = (to: string, IconComponent: IconFunction, customIconSize?: number) => (
     <NavLink to={to}>
       {({ isActive }: { isActive: boolean }) => (
-        <Box display="flex" alignItems="center" position="relative" justifyContent={"center"} height={60} maxWidth={60} overflow={"hidden"} width={"100%"}>
+        <Box display="flex" alignItems="center" position="relative" justifyContent={"center"} height={55} maxWidth={55} overflow={"hidden"} width={"100%"}>
           <IconButton
             sx={{
               height: customIconSize || 40,
               width: customIconSize || 40,
-              color: isActive ? "green" : "black",
+              color: isActive ? "var(--success-color)" : "black",
             }}
           >
             {IconComponent()}
@@ -49,13 +49,48 @@ const Sidebar: React.FC = () => {
         <Divider />
 
         <Box display="flex" flexDirection="column" flexGrow={1} justifyContent="space-between">
-          <Box display="flex" flexDirection="column" alignItems="center" py={1}>
+          <Box display="flex" flexDirection="column" alignItems="center">
             {renderNavItem("/home", HomeIcon)}
             {renderNavItem("/user", UserIcon)}
             {renderNavItem("/", StarDot, 45)}
             {renderNavItem("/messages", MessageIcon)}
             {renderNavItem("/share", ArrowIcon)}
             {renderNavItem("/settings", SettingsIcon, 86)}
+          </Box>
+          <Box gap={3} display="flex" flexDirection="column" alignItems="center" py={1}>
+            <Box height={30} width={30}>
+              <Box height={"100%"} width={"100%"} borderRadius={15} component={"img"} alt="profile-pic" src="/profile.png" />
+            </Box>
+            <Box width={25} height={25}>
+              <IconButton
+                sx={{
+                  height: 25,
+                  width: 25,
+                  color: "#616061",
+                  padding: 0,
+                  position: "absolute",
+                }}
+              >
+                {<QuestionIcon />}
+              </IconButton>
+            </Box>
+            <Button
+              variant={"contained"}
+              sx={{
+                textTransform: "none",
+                fontSize: "0.9rem",
+                fontWeight: 500,
+                bgcolor: "var(--primary-color)",
+                border: "1px solid var(--primary-color) !important",
+                color: "white",
+                borderRadius: 1.5,
+                p: 1,
+                maxHeight: "35px",
+                width: "70%",
+              }}
+            >
+              Rene...
+            </Button>
           </Box>
         </Box>
       </Box>

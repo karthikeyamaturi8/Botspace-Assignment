@@ -5,11 +5,11 @@ import PostSection from "./postSection";
 import DescriptionSection from "./descriptionSection";
 import NavSection from "./navSection";
 import Comments from "./comments";
-import { useStarStore } from "../../stores/star";
 import Message from "./message";
+import { useStarStore } from "../../stores/star";
 
 const Mobile = () => {
-  const { view } = useStarStore();
+  const { currentStep } = useStarStore();
   const TopSection = () => {
     return (
       <Box display="flex" width="100%" justifyContent="space-between" alignItems="start">
@@ -17,15 +17,15 @@ const Mobile = () => {
           Preview
         </Typography>
         <Button
-          variant="outlined"
+          variant={currentStep >= 6 ? "contained" : "outlined"}
           sx={{
             textTransform: "none",
             fontSize: "0.9rem",
             fontWeight: 500,
-            bgcolor: "white",
-            borderColor: "var(--text-secondary)",
-            borderWidth: 1,
-            color: "var(--text-primary)",
+            bgcolor: currentStep >= 6 ? "var(--primary-color)" : "white",
+            border: currentStep >= 6 ? "1px solid var(--primary-color) !important" : "1px solid #edebeeff !important",
+            color: currentStep >= 6 ? "white" : "var(--text-primary)",
+            borderRadius: 1.5,
           }}
         >
           Go Live
@@ -48,7 +48,7 @@ const Mobile = () => {
           display={"flex"}
           flexDirection={"column"}
           position={"relative"}
-          width={"300px"}
+          width={"310px"}
           height={"640px"}
           sx={{
             border: "13px solid #1C1D27",
@@ -63,18 +63,45 @@ const Mobile = () => {
           {DescriptionSection()}
           <Divider sx={{ background: "#1C1D27" }} />
           {NavSection()}
-          {view === "COMMENTS" && Comments()}
-          {view === "DM" && Message()}
+          {Comments()}
+          {Message()}
         </Box>
       </Box>
     );
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap={4} alignItems="flex-start" bgcolor="grey.50" flexGrow={1} p={2}>
-      {TopSection()}
-      {MobileSection()}
-      {BottomSection()}
+    <Box width={"100%"} display="flex" flexDirection="column" gap={4} alignItems="flex-start" bgcolor="var(--secondary-color)">
+      <Box
+        p={3}
+        gap={4}
+        width="100%"
+        flexGrow={1}
+        sx={{
+          overflowY: "scroll",
+          "&::-webkit-scrollbar": {
+            width: "4px",
+            transition: "opacity 1s",
+          },
+          "&::-webkit-scrollbar-track": {
+            background: "#fff",
+            borderRadius: "4px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "#fff", // default color
+            borderRadius: "4px",
+          },
+          "&:hover::-webkit-scrollbar-thumb": {
+            background: "#999", // on hover
+          },
+        }}
+        display="flex"
+        flexDirection={"column"}
+      >
+        {TopSection()}
+        {MobileSection()}
+        {BottomSection()}
+      </Box>
     </Box>
   );
 };

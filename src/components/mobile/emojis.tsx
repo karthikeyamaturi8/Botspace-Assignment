@@ -7,10 +7,12 @@ import Sad from "../../assets/emojis/img-5.png";
 import LoveEyes from "../../assets/emojis/img-6.png";
 import Shock from "../../assets/emojis/img-7.png";
 import Laugh from "../../assets/emojis/img-8.png";
+import { useStarStore } from "../../stores/star";
 
 const Emojis = () => {
+  const { viewEmojis } = useStarStore();
   return (
-    <Box px={1} width={"100%"} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
+    <Box px={1} width={"100%"} display={viewEmojis ? "flex" : "none"} justifyContent={"space-between"} alignItems={"center"}>
       <Box height={20} component={"img"} src={Love} alt="Love" />
       <Box height={20} component={"img"} src={Praise} alt="Praise" />
       <Box height={20} component={"img"} src={Fire} alt="Fire" />
